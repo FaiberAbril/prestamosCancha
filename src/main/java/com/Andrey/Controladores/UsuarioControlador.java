@@ -10,48 +10,48 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.Andrey.Modelos.Usuario;
-import com.Andrey.services.usuarioservicios;
+import com.Andrey.Services.UsuarioServicios;
 
 @Controller
 @RequestMapping("/usuario")
 public class UsuarioControlador {
 
 	@Autowired
-	private usuarioservicios usuarioservicios;
+	private UsuarioServicios usuarioServicios;
 	
 	@GetMapping("/")
-	public String paginausuarios(Model model) {
-		model.addAttribute("listaUsuarios", usuarioservicios.ListarUsuarios());
-		return "usuario";
+	public String PaginaUsuario(Model model) {
+		model.addAttribute("listaUsuario", usuarioServicios.ListarUsuarios());
+		return "usuarios";
 	}
 	
-	@GetMapping("/formAgrgarUsuario")
-	public String agregarUsuario(Model model) {
+	@GetMapping("/agregarUsuario")
+	public String AgregarUsuario(Model model) {
 		model.addAttribute("ObjUsuario", new Usuario());
-		return "formUsuario";
+		return "formularioAgregarUsuario";
 	}
-
+	
 	@PostMapping("/guardarUsuario")
-	public String guardarUsuario(@ModelAttribute("ObjUsuario") Usuario usuario) {
-		usuarioservicios.agregarusuario(usuario);
+	public String GuardarUsuario(@ModelAttribute("ObjUsuario") Usuario usuario) {
+		usuarioServicios.CrearUsuario(usuario);
 		return "redirect:/usuario/";
 	}
 	
-	@GetMapping("/eliminarUsuario/{IdCliente}")
-	public String eliminarUsuario(@PathVariable("IdCliente") int IdCliente) {
-		usuarioservicios.eliminarUsuario(IdCliente);
+	@GetMapping("/eliminarUsuario/{IdUsuario}")
+	public String EliminarUsuario(@PathVariable("IdUsuario") Long IdUsuario) {
+		usuarioServicios.EliminarUsuario(IdUsuario);
 		return "redirect:/usuario/";
 	}
 	
-	@GetMapping("/formActualizarUsuario/{IdCliente}")
-	public String formActualizarUsuario(Model model,@PathVariable("IdCliente")int IdCliente) {
-		model.addAttribute("ObjUsuarioActualizado", usuarioservicios.capturarUsuario(IdCliente));
-		return "formActualizarUsuario";
+	@GetMapping("/formActuActualizarUsuario/{idUsuario}")
+	public String formularioActualizarUsuario(Model model, @PathVariable("idCliente") Long IdUsuario) {
+		model.addAttribute("ObjUsuarioActualizado", usuarioServicios.BuscarUsuario(IdUsuario));
+		return "formularioActualizarUsuario";
 	}
 	
 	@PostMapping("/actualizarUsuario")
-	public String actualizarUsuario(@ModelAttribute("ObjUsuarioActualizado")Usuario usuario) {
-		usuarioservicios.actualizarUsuario(usuario);
+	public String ActualizarUsuario(@ModelAttribute("ObjUsuarioActualizado") Usuario usuario) {
+		usuarioServicios.ActualizarUsuario(usuario);
 		return "redirect:/usuario/";
 	}
 	

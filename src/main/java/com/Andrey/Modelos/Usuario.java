@@ -11,21 +11,21 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table
+@Table(name="usuario")
 public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long IdCliente;
+	private Long IdUsuario;
 	
 	@Column(length = 40, nullable = false)
-	private String nombreCliente;
+	private String nombreUsuario;
 	
 	@Column(length = 40, nullable = false)
-	private String emailCliente;
+	private String emailUsuario;
 	
 	@Column(length = 10, nullable = false)
-	private String telefonoCliente;
+	private String telefonoUsuario;
 	
 	@JoinColumn(name="rolCliente")
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -34,44 +34,46 @@ public class Usuario {
 	public Usuario() {
 		// TODO Auto-generated constructor stub
 	}
-	public Usuario(Long idCliente, String nombreCliente, String emailCliente, String telefonoCliente, Rol rolCliente) {
+
+	public Usuario(Long idUsuario, String nombreUsuario, String emailUsuario, String telefonoUsuario, Rol rolCliente) {
 		super();
-		IdCliente = idCliente;
-		this.nombreCliente = nombreCliente;
-		this.emailCliente = emailCliente;
-		this.telefonoCliente = telefonoCliente;
+		IdUsuario = idUsuario;
+		this.nombreUsuario = nombreUsuario;
+		this.emailUsuario = emailUsuario;
+		this.telefonoUsuario = telefonoUsuario;
 		RolCliente = rolCliente;
 	}
-	public Long getIdCliente() {
-		return IdCliente;
+
+	public Long getIdUsuario() {
+		return IdUsuario;
 	}
 
-	public void setIdCliente(Long idCliente) {
-		IdCliente = idCliente;
+	public void setIdUsuario(Long idUsuario) {
+		IdUsuario = idUsuario;
 	}
 
-	public String getNombreCliente() {
-		return nombreCliente;
+	public String getNombreUsuario() {
+		return nombreUsuario;
 	}
 
-	public void setNombreCliente(String nombreCliente) {
-		this.nombreCliente = nombreCliente;
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
 	}
 
-	public String getEmailCliente() {
-		return emailCliente;
+	public String getEmailUsuario() {
+		return emailUsuario;
 	}
 
-	public void setEmailCliente(String emailCliente) {
-		this.emailCliente = emailCliente;
+	public void setEmailUsuario(String emailUsuario) {
+		this.emailUsuario = emailUsuario;
 	}
 
-	public String getTelefonoCliente() {
-		return telefonoCliente;
+	public String getTelefonoUsuario() {
+		return telefonoUsuario;
 	}
 
-	public void setTelefonoCliente(String telefonoCliente) {
-		this.telefonoCliente = telefonoCliente;
+	public void setTelefonoUsuario(String telefonoUsuario) {
+		this.telefonoUsuario = telefonoUsuario;
 	}
 
 	public Rol getRolCliente() {
@@ -81,7 +83,8 @@ public class Usuario {
 	public void setRolCliente(Rol rolCliente) {
 		RolCliente = rolCliente;
 	}
-	
+
+
 }
  
 

@@ -1,4 +1,4 @@
-package com.Andrey.services;
+package com.Andrey.Services;
 
 import java.util.List;
 
@@ -6,32 +6,34 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Andrey.Modelos.Usuario;
-import com.Andrey.Repositorios.UsuarioRepository;
+import com.Andrey.Repositorios.clienteRepository;
+
+
 
 @Service
-public class usuarioservicios {
-	
+public class UsuarioServicios {
+
 	@Autowired
-	private UsuarioRepository repository;
+	private clienteRepository clienteRepository;
 	
-	public void agregarusuario(Usuario usuario) {
-		repository.save(usuario);
+	public void CrearUsuario(Usuario cliente) {
+		clienteRepository.save(cliente);
+	}
+	
+	public void ActualizarUsuario(Usuario cliente) {
+		clienteRepository.save(cliente);
+	}
+	
+	public void EliminarUsuario(Long IdUsuario) {
+		clienteRepository.deleteById(IdUsuario);
+	}
+	
+	public Usuario BuscarUsuario(Long IdUsuario) {
+		return clienteRepository.findById(IdUsuario).get();
 	}
 	
 	public List<Usuario> ListarUsuarios(){
-		return repository.findAll();
+		return clienteRepository.findAll();
 	}
 	
-	public void eliminarUsuario(int IdCliente) {
-		repository.deleteById(IdCliente);
-	}
-	
-	public void actualizarUsuario(Usuario usuario) {
-		repository.save(usuario);
-	}
-	
-	public Usuario capturarUsuario(int IdCliente) {
-		return repository.findById(IdCliente).get();
-	}
-
 }

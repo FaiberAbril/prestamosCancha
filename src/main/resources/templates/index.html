@@ -1,114 +1,510 @@
-
-
-
-<!--
-=========================================================
-* Soft UI Dashboard - v1.0.7
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
--->
-
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="es">
 
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Canchas</title>
+  <link rel="shortcut icon" type="image/png" th:href="@{/images/logos/Logo_Agropecuaria_el_Rovirense.jpeg}" />
+  <link rel="stylesheet" th:href="@{/css/styles.min.css}" />
+</head>
 
-
-
-
-
-
-
-
-
-
-
-
-
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-<link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
-<link rel="icon" type="image/png" href="./assets/img/favicon.png">
-
-<title>
-  
-   Soft UI Dashboard  by Creative Tim
-  
-
-  
-
-  
-</title>
-
-
-
-<!--     Fonts and icons     -->
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
-
-<!-- Nucleo Icons -->
-<link href="./assets/css/nucleo-icons.css" rel="stylesheet" />
-<link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
-
-<!-- Font Awesome Icons -->
-<script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-<link href="./assets/css/nucleo-svg.css" rel="stylesheet" />
-
-<!-- CSS Files -->
-
-
-
-<link id="pagestyle" href="./assets/css/soft-ui-dashboard.css?v=1.0.7" rel="stylesheet" />
-
-
-
-
-
-<!-- Nepcha Analytics (nepcha.com) -->
-<!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
-<script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
-
-
-  </head>
-
-
-  <body>
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<body class="vh-100">
-  <div class="container h-100">
-    <div class="row h-100">
-      <div class="col-10 m-auto text-center">
-        <h6>If you are not redirected automatically, follow <a href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html">this link</a>.</h6>
+<body>
+  <!--  Body Wrapper -->
+  <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+    data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+      <!-- Sidebar scroll-->
+      <div>
+        <div class="brand-logo d-flex align-items-center justify-content-between">
+          <a th:href="@{/Principal/}" class="text-nowrap logo-img">
+            <img
+              src="https://us.123rf.com/450wm/sabelskaya/sabelskaya1910/sabelskaya191000140/131509030-sello-de-icono-de-club-de-f%C3%BAtbol-con-corona-redonda-y-f%C3%BAtbol-aislado-sobre-fondo-blanco-plantilla.jpg?ver=6"
+              class="img-fluid" />
+          </a>
+          <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+            <i class="ti ti-x fs-8"></i>
+          </div>
+        </div>
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+          <ul id="sidebarnav">
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Principal</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" th:href="@{/principal/}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-layout-dashboard"></i>
+                </span>
+                <span class="hide-menu">Pagina Principal</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" th:href="@{/venta/}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-shopping-cart"></i>
+                </span>
+                <span class="hide-menu">Canchas</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Reservas</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" th:href="@{/producto/}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-package"></i>
+                </span>
+                <span class="hide-menu">Perfil</span>
+              </a>
+            </li>
+            <li class="nav-small-cap">
+              <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+              <span class="hide-menu">Administración</span>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" th:href="@{/cliente/}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-user"></i>
+                </span>
+                <span class="hide-menu">Clientes</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" th:href="@{/profesional/}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-id-badge"></i>
+                </span>
+                <span class="hide-menu">Profesionales</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+      </div>
+      <!-- End Sidebar scroll-->
+    </aside>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+      <!--  Header Start -->
+      <header class="app-header">
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <ul class="navbar-nav">
+            <li class="nav-item d-block d-xl-none">
+              <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+                <i class="ti ti-menu-2"></i>
+              </a>
+            </li>
+          </ul>
+          <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+            <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+              <li class="nav-item align-items-center justify-content-between">
+                <h1>SOCCER CLUB RESERVATION</h1>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <img th:src="@{/images/profile/user-1.jpg}" alt="" width="35" height="35" class="rounded-circle" />
+                </a>
+                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
+                  <div class="message-body">
+                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                      <i class="ti ti-user fs-6"></i>
+                      <p class="mb-0 fs-3">Mi Perfil</p>
+                    </a>
+                    <a href="#" class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!--  Header End -->
+      <div class="container-fluid">
+        <!--  Row 1 -->
+        <div class="row">
+          <div class="col-sm-6 col-xl-3">
+            <div class="card overflow-hidden rounded-2">
+              <div class="position-relative">
+                <div class="card-body pt-3 p-4 row">
+                  <div class="col-6 text-center mt-2">
+                    <h6 class="fw-semibold fs-4">Productos</h6>
+                  </div>
+                  <div class="col-6 text-center">
+                    <a th:href="@{/producto/}"
+                      class="bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
+                      data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
+                        class="ti ti-package fs-4"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="card overflow-hidden rounded-2">
+              <div class="position-relative">
+                <div class="card-body pt-3 p-4 row">
+                  <div class="col-6 text-center mt-2">
+                    <h6 class="fw-semibold fs-4">Usuarios</h6>
+                  </div>
+                  <div class="col-6 text-center">
+                    <a th:href="@{/cliente/}"
+                      class="bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
+                      data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
+                        class="ti ti-user-plus fs-4"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="card overflow-hidden rounded-2">
+              <div class="position-relative">
+                <div class="card-body pt-3 p-4 row">
+                  <div class="col-6 text-center mt-2">
+                    <h6 class="fw-semibold fs-4">Profesionales</h6>
+                  </div>
+                  <div class="col-6 text-center">
+                    <a th:href="@{/profesional/}"
+                      class="bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
+                      data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
+                        class="ti ti-school fs-4"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-xl-3">
+            <div class="card overflow-hidden rounded-2">
+              <div class="position-relative">
+                <div class="card-body pt-3 p-4 row">
+                  <div class="col-6 text-center mt-2">
+                    <h6 class="fw-semibold fs-4">Reservas</h6>
+                  </div>
+                  <div class="col-6 text-center">
+                    <a th:href="@{/producto/}"
+                      class="bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
+                      data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Add To Cart"><i
+                        class="ti ti-package fs-4"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="row">
+              <div class="col-lg-12 d-flex align-items-strech">
+                <!-- Yearly Breakup -->
+                <div class="card overflow-hidden">
+                  <div class="card-body d-sm-flex d-block align-items-center justify-content-between mb-9 row">
+                    <h4 class="card-title mb-9 fw-semibold col-sm-6">
+                      Total En Inventario:
+                    </h4>
+                    <!--h4 th:text="${totalInventario}" class="card-title mb-9 fw-semibold col-sm-6"></h4-->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-8 d-flex align-items-strech">
+            <div class="card w-100">
+              <div class="card-body">
+                <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
+                  <div class="mb-3 mb-sm-0">
+                    <h5 class="card-title fw-semibold">Sales Overview</h5>
+                  </div>
+                  <div>
+                    <select class="form-select">
+                      <option value="1">March 2023</option>
+                      <option value="2">April 2023</option>
+                      <option value="3">May 2023</option>
+                      <option value="4">June 2023</option>
+                    </select>
+                  </div>
+                </div>
+                <div id="chart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
+          <div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-1h77wgb">
+            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 css-6fiaes">
+              <div
+                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation9 MuiCard-root css-osz7w2">
+                <a class="MuiTypography-root MuiTypography-body1 css-upxsvy" href="/"><img alt="img" loading="lazy"
+                    width="1280" height="1280" decoding="async" data-nimg="1"
+                    style="color:transparent;width:100%;height:250px"
+                    srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs4.b8337fa1.jpg&amp;w=1920&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs4.b8337fa1.jpg&amp;w=3840&amp;q=75 2x"
+                    src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs4.b8337fa1.jpg&amp;w=3840&amp;q=75"></a><button
+                  class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-r93u1k"
+                  tabindex="0" type="button" aria-label="Add To Cart"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-basket">
+                    <path d="M10 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                    <path
+                      d="M5.001 8h13.999a2 2 0 0 1 1.977 2.304l-1.255 7.152a3 3 0 0 1 -2.966 2.544h-9.512a3 3 0 0 1 -2.965 -2.544l-1.255 -7.152a2 2 0 0 1 1.977 -2.304z">
+                    </path>
+                    <path d="M17 10l-2 -6"></path>
+                    <path d="M7 10l2 -6"></path>
+                  </svg><span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+                <div class="MuiCardContent-root css-1bt1eij">
+                  <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">Boat Headphone</h6>
+                  <div class="MuiStack-root css-k8v621">
+                    <div class="MuiStack-root css-u4p24i">
+                      <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!-- -->285</h6>
+                      <p class="MuiTypography-root MuiTypography-body1 css-1qbpimr">$<!-- -->375
+                      </p>
+                    </div><span class="MuiRating-root MuiRating-sizeSmall Mui-readOnly MuiRating-readOnly css-1a2asoj"
+                      role="img" aria-label="4 Stars"><span><span
+                          class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarBorderIcon">
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
+                            </path>
+                          </svg></span></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 css-6fiaes">
+              <div
+                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation9 MuiCard-root css-osz7w2">
+                <a class="MuiTypography-root MuiTypography-body1 css-upxsvy" href="/"><img alt="img" loading="lazy"
+                    width="1280" height="1280" decoding="async" data-nimg="1"
+                    style="color:transparent;width:100%;height:250px"
+                    srcset="https://www.las2orillas.co/wp-content/uploads/2019/06/cancha.png"
+                    src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs5.0fbca68f.jpg&amp;w=3840&amp;q=75"></a><button
+                  class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-r93u1k"
+                  tabindex="0" type="button" aria-label="Add To Cart"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-basket">
+                    <path d="M10 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                    <path
+                      d="M5.001 8h13.999a2 2 0 0 1 1.977 2.304l-1.255 7.152a3 3 0 0 1 -2.966 2.544h-9.512a3 3 0 0 1 -2.965 -2.544l-1.255 -7.152a2 2 0 0 1 1.977 -2.304z">
+                    </path>
+                    <path d="M17 10l-2 -6"></path>
+                    <path d="M7 10l2 -6"></path>
+                  </svg><span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+                <div class="MuiCardContent-root css-1bt1eij">
+                  <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">MacBook Air Pro</h6>
+                  <div class="MuiStack-root css-k8v621">
+                    <div class="MuiStack-root css-u4p24i">
+                      <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!-- -->900</h6>
+                      <p class="MuiTypography-root MuiTypography-body1 css-1qbpimr">$<!-- -->650
+                      </p>
+                    </div><span class="MuiRating-root MuiRating-sizeSmall Mui-readOnly MuiRating-readOnly css-1a2asoj"
+                      role="img" aria-label="5 Stars"><span><span
+                          class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 css-6fiaes">
+              <div
+                class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation9 MuiCard-root css-osz7w2">
+                <a class="MuiTypography-root MuiTypography-body1 css-upxsvy" href="/"><img alt="img" loading="lazy"
+                    width="1280" height="1280" decoding="async" data-nimg="1"
+                    style="color:transparent;width:100%;height:250px"
+                    srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs7.a36f2283.jpg&amp;w=1920&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs7.a36f2283.jpg&amp;w=3840&amp;q=75 2x"
+                    src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs7.a36f2283.jpg&amp;w=3840&amp;q=75"></a><button
+                  class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-r93u1k"
+                  tabindex="0" type="button" aria-label="Add To Cart"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                    height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-basket">
+                    <path d="M10 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                    <path
+                      d="M5.001 8h13.999a2 2 0 0 1 1.977 2.304l-1.255 7.152a3 3 0 0 1 -2.966 2.544h-9.512a3 3 0 0 1 -2.965 -2.544l-1.255 -7.152a2 2 0 0 1 1.977 -2.304z">
+                    </path>
+                    <path d="M17 10l-2 -6"></path>
+                    <path d="M7 10l2 -6"></path>
+                  </svg><span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+                <div class="MuiCardContent-root css-1bt1eij">
+                  <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">Red Valvet Dress</h6>
+                  <div class="MuiStack-root css-k8v621">
+                    <div class="MuiStack-root css-u4p24i">
+                      <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!-- -->200</h6>
+                      <p class="MuiTypography-root MuiTypography-body1 css-1qbpimr">$<!-- -->150
+                      </p>
+                    </div><span class="MuiRating-root MuiRating-sizeSmall Mui-readOnly MuiRating-readOnly css-1a2asoj"
+                      role="img" aria-label="3 Stars"><span><span
+                          class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                            <path
+                              d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarBorderIcon">
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
+                            </path>
+                          </svg></span></span><span><span class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
+                            class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                            aria-hidden="true" viewBox="0 0 24 24" data-testid="StarBorderIcon">
+                            <path
+                              d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
+                            </path>
+                          </svg></span></span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation9 MuiCard-root css-osz7w2">
+              <a class="MuiTypography-root MuiTypography-body1 css-upxsvy" href="/"><img alt="img" loading="lazy"
+                  width="1280" height="1280" decoding="async" data-nimg="1"
+                  style="color:transparent;width:100%;height:250px"
+                  srcset="templates/canchas.html &amp;w=1920 &amp;q=75 1x, templates/canchas.html & amp;w=3840&amp;q=75 2x"
+                  src="templates/canchas.html&amp;w=3840&amp;q=75"></a><button
+                class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-r93u1k"
+                tabindex="0" type="button" aria-label="Add To Cart"><svg xmlns="http://www.w3.org/2000/svg" width="16"
+                  height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" class="tabler-icon tabler-icon-basket">
+                  <path d="M10 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+                  <path
+                    d="M5.001 8h13.999a2 2 0 0 1 1.977 2.304l-1.255 7.152a3 3 0 0 1 -2.966 2.544h-9.512a3 3 0 0 1 -2.965 -2.544l-1.255 -7.152a2 2 0 0 1 1.977 -2.304z">
+                  </path>
+                  <path d="M17 10l-2 -6"></path>
+                  <path d="M7 10l2 -6"></path>
+                </svg><span class="MuiTouchRipple-root css-w0pj6f"></span></button>
+              <div class="MuiCardContent-root css-1bt1eij">
+                <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">Cute Soft Teddybear</h6>
+                <div class="MuiStack-root css-k8v621">
+                  <div class="MuiStack-root css-u4p24i">
+                    <h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!-- -->345</h6>
+                    <p class="MuiTypography-root MuiTypography-body1 css-1qbpimr">$<!-- -->285</p>
+                  </div><span class="MuiRating-root MuiRating-sizeSmall Mui-readOnly MuiRating-readOnly css-1a2asoj"
+                    role="img" aria-label="2 Stars"><span><span
+                        class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                          aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                          </path>
+                        </svg></span></span><span><span class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                          aria-hidden="true" viewBox="0 0 24 24" data-testid="StarIcon">
+                          <path
+                            d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
+                          </path>
+                        </svg></span></span><span><span class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                          aria-hidden="true" viewBox="0 0 24 24" data-testid="StarBorderIcon">
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
+                          </path>
+                        </svg></span></span><span><span class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                          aria-hidden="true" viewBox="0 0 24 24" data-testid="StarBorderIcon">
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
+                          </path>
+                        </svg></span></span><span><span class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
+                          class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4" focusable="false"
+                          aria-hidden="true" viewBox="0 0 24 24" data-testid="StarBorderIcon">
+                          <path
+                            d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
+                          </path>
+                        </svg></span></span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="py-6 px-6 text-center">
+        <p class="mb-0 fs-4">
+          Design and Developed by
+          <a href="https://adminmart.com/" target="_blank"
+            class="pe-1 text-primary text-decoration-underline">AdminMart.com</a>
+        </p>
       </div>
     </div>
   </div>
+  </div>
+  <script th: src="@{/libs/jquery/dist/jquery.min.js}"></script>
+  <script th:src="@{/libs/bootstrap/dist/js/bootstrap.bundle.min.js}"></script>
+  <script th:src="@{/js/sidebarmenu.js}"></script>
+  <script th:src="@{/js/app.min.js}"></script>
+  <script th:src="@{/libs/apexcharts/dist/apexcharts.min.js}"></script>
+  <script th:src="@{/libs/simplebar/dist/simplebar.js}"></script>
+  <script th:src="@{/js/dashboard.js}"></script>
 </body>
-
-
-  </body>
 
 </html>
