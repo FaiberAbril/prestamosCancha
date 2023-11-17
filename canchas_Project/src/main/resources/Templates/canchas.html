@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Canchas disponibles</title>
+ <style>
+    body {
+ font-family: Arial, sans-serif;
+ background-color: #f5f5f5;
+}
+
+.container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 20px;
+}
+
+.project {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ background-color: #fff;
+ padding: 20px;
+ border-radius: 5px;
+ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+ transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+ transform: translateY(-10px);
+}
+
+.project-info h2 {
+ margin-bottom: 10px;
+}
+
+.reserve-btn {
+ background-color: #4CAF50;
+ color: white;
+ padding: 10px 20px;
+ border-radius: 5px;
+ cursor: pointer;
+ transition: background-color 0.3s ease-in-out;
+}
+
+.reserve-btn:hover {
+ background-color: #45a049;
+}
+.reserve-btn-occupied {
+            background-color: #f44336; /* Color rojo para ocupado */
+        }
+
+        .reserve-btn-occupied:hover {
+            background-color: #b71c1c;
+        }
+/* Estilos CSS van aquí */
+ </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Canchas disponibles</h1>
+        <div class="project">
+          <img src="https://www.las2orillas.co/wp-content/uploads/2019/06/cancha.png" alt="Imagen de cancha 1">
+          <div class="project-info">
+            <h2>Cancha 1</h2>
+            <p>Número de canchas: 2</p>
+            <p>Tipo de canchas: Tenis</p>
+          </div>
+          <button class="reserve-btn">Reservar</button>
+        </div>
+        <div class="project">
+          <img src="https://lavozdelaregion.co/wp-content/uploads/2020/10/Cancha-sintetica-Nataga.jpg" alt="Imagen de cancha 2">
+          <div class="project-info">
+            <h2>Cancha 2</h2>
+            <p>Número de canchas: 1</p>
+            <p>Tipo de canchas: Baloncesto</p>
+          </div>
+          <button class="reserve-btn reserve-btn-occupied" th:href="@{/reserva/}">Reservar</button>
+        </div>
+        <!-- Más canchas disponibles -->
+    </div> 
+</body>
+</html>
