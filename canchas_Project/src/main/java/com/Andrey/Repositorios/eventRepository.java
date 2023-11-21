@@ -20,6 +20,7 @@ public interface eventRepository extends JpaRepository<event, Integer> {
 		
 		
 		/* This one uses an @Query */
+		@Query
 		public List<event> findBystartBetween(LocalDateTime start, LocalDateTime finish);
 		
 
