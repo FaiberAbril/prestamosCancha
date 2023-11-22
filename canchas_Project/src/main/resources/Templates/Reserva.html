@@ -58,19 +58,23 @@
 <body>
     <h1>Reservación de Canchas</h1>
 
-    <form action="/canchas" method="post">
+    <form th:action="@{/reserva/guardarReserva}" method="post" th:object="${ObjReserva}">
         <label for="cancha_id">Seleccione la cancha:</label>
-        <select name="cancha_id" id="cancha_id">
+        <select name="select" id="select" th:field="*{canchaSintetica}">
             <!-- Aquí se listarán las canchas disponibles -->
+            <option th:each="Cancha:${listaCanchas}" 
+            th:value="${Cancha.id}"
+            th:text="${Cancha.id}"></option>
         </select>
 
         <label for="fecha">Fecha:</label>
-        <input type="date" name="fecha" id="fecha">
+        <input type="date" name="fecha" id="fecha" th:field="*{fecha}">
 
         <label for="hora">Hora:</label>
-        <input type="time" name="hora" id="hora">
+        <input type="time" name="hora" id="hora" th:field="*{horasReservadas}">
 
-        <input type="submit" value="Reservar">
+
+        <button type="submit">Reservar</button>
     </form>
 
     <h2>Canchas Reservadas</h2>
@@ -85,7 +89,19 @@
         </thead>
         <tbody>
             <!-- Aquí se listarán las canchas reservadas -->
+            <tr th:each="Reserva:${listaReserva}">
+                <td>
+                    <h6 th:text="${Reserva.fecha}"></h6>
+                </td>
+                <td>
+                    <h6 th:text="${Reserva.horasReservadas}"></h6>
+                </td>
+                <td>
+                    <h6 th:text="${Reserva.canchaSintetica}"></h6>
+                </td>
+            </tr>
         </tbody>
     </table>
 </body>
+
 </html>

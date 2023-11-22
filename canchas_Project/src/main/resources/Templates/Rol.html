@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Rol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #007bff;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 400px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+            border-radius: 3px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://api.izeelogo.com/categoriepage/logo/equipo-de-futbol/como-hacer-escudos-para-soccer-logos.png" alt="Logo de la empresa">
+        </div>
+        <h1>Vista Rol</h1>
+        <p>Seleccione su rol:</p>
+        <select id="rol">
+            <option value="usuario">Usuario</option>
+            <option value="admin">Admin</option>
+        </select>
+        <button id="guardarRol">Guardar Rol</button>
+    </div>
+    <script>
+        // Función para guardar el rol seleccionado en el almacenamiento local
+        function guardarRol() {
+            var rol = document.getElementById("rol").value;
+            localStorage.setItem("rol", rol);
+        }
+
+        // Agregar un evento "click" al botón "guardarRol"
+        document.getElementById("guardarRol").addEventListener("click", guardarRol);
+    </script>
+</body>
+</html>

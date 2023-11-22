@@ -22,7 +22,7 @@ public class UsuarioControlador {
 	@GetMapping("/")
 	public String PaginaUsuario(Model model) {
 		model.addAttribute("listaUsuario", usuarioServicios.ListarUsuarios());
-		return "usuarios";
+		return "Usuario";
 	}
 	
 	@GetMapping("/agregarUsuario")

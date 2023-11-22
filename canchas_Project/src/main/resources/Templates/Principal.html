@@ -34,7 +34,7 @@
 							<span class="hide-menu">Principal</span>
 						</li>
 						<li class="sidebar-item">
-							<a class="sidebar-link"  aria-expanded="false">
+							<a class="sidebar-link" aria-expanded="false">
 								<span>
 									<i class="ti ti-layout-dashboard"></i>
 								</span>
@@ -42,19 +42,20 @@
 							</a>
 						</li>
 						<li class="sidebar-item">
-							<a class="sidebar-link"  aria-expanded="false">
+							<a th:href="@{/cancha/}" class="sidebar-link" aria-expanded="false">
 								<span>
 									<i class="ti ti-shopping-cart"></i>
 								</span>
 								<span class="hide-menu">Canchas</span>
 							</a>
+							
 						</li>
 						<li class="nav-small-cap">
 							<i class="ti ti-dots nav-small-cap-icon fs-4"></i>
 							<span class="hide-menu">Reservas</span>
 						</li>
 						<li class="sidebar-item">
-							<a class="sidebar-link"  aria-expanded="false">
+							<a class="sidebar-link" aria-expanded="false">
 								<span>
 									<i class="ti ti-package"></i>
 								</span>
@@ -66,7 +67,7 @@
 							<span class="hide-menu">Administración</span>
 						</li>
 						<li class="sidebar-item">
-							<a class="sidebar-link"  aria-expanded="false">
+							<a class="sidebar-link" aria-expanded="false">
 								<span>
 									<i class="ti ti-user"></i>
 								</span>
@@ -74,7 +75,7 @@
 							</a>
 						</li>
 						<li class="sidebar-item">
-							<a class="sidebar-link"  aria-expanded="false">
+							<a class="sidebar-link" aria-expanded="false">
 								<span>
 									<i class="ti ti-id-badge"></i>
 								</span>
@@ -114,7 +115,7 @@
 								</a>
 								<div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
 									aria-labelledby="drop2">
-									<div >
+									<div>
 										<a href="javascript:void(0)"
 											class="d-flex align-items-center gap-2 dropdown-item">
 											<i class="ti ti-user fs-6"></i>
@@ -137,11 +138,11 @@
 							<div class="position-relative">
 								<div class="card-body pt-3 p-4 row">
 									<div class="col-6 text-center mt-2">
-										<h6 class="fw-semibold fs-4">Productos</h6>
+										<h6 class="fw-semibold fs-4">Canchas</h6>
 									</div>
 									<div class="col-6 text-center">
-										<a 
-											class="bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
+										<a th:href="@{/cancha/}"
+											class= "bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
 											data-bs-toggle="tooltip" data-bs-placement="top"
 											data-bs-title="Add To Cart"><i class="ti ti-package fs-4"></i></a>
 									</div>
@@ -157,8 +158,8 @@
 										<h6 class="fw-semibold fs-4">Usuarios</h6>
 									</div>
 									<div class="col-6 text-center">
-										<a 
-											class="bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
+										<a th:href="@{/usuario/}"
+											class=" bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
 											data-bs-toggle="tooltip" data-bs-placement="top"
 											data-bs-title="Add To Cart"><i class="ti ti-user-plus fs-4"></i></a>
 									</div>
@@ -174,8 +175,8 @@
 										<h6 class="fw-semibold fs-4">Profesionales</h6>
 									</div>
 									<div class="col-6 text-center">
-										<a
-											class="bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
+										<a th:href="@{/reserva/}"
+											class=" bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
 											data-bs-toggle="tooltip" data-bs-placement="top"
 											data-bs-title="Add To Cart"><i class="ti ti-school fs-4"></i></a>
 									</div>
@@ -191,8 +192,8 @@
 										<h6 class="fw-semibold fs-4">Reservas</h6>
 									</div>
 									<div class="col-6 text-center">
-										<a 
-											class="bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
+										<a th:href="@{/reserva/}"
+											class=" bg-primary rounded-circle p-2 text-white d-inline-flex bottom-0 end-0 mb-n3 me-3 text-center"
 											data-bs-toggle="tooltip" data-bs-placement="top"
 											data-bs-title="Add To Cart"><i class="ti ti-package fs-4"></i></a>
 									</div>
@@ -218,328 +219,91 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-8 d-flex align-items-strech">
-						<div class="card w-100">
-							<div class="card-body">
-								<div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
-									<div class="mb-3 mb-sm-0">
-										<h5 class="card-title fw-semibold">Sales Overview</h5>
-									</div>
-									<div>
-										<select class="form-select">
-											<option value="1">March 2023</option>
-											<option value="2">April 2023</option>
-											<option value="3">May 2023</option>
-											<option value="4">June 2023</option>
-										</select>
-									</div>
-								</div>
-								<div id="chart"></div>
-							</div>
-						</div>
+					
+				<div class="row row-cols-1 row-cols-md-2 g-4">
+					<div class="col">
+					   <div class="card">
+						 <img src="https://bogota.gov.co/sites/default/files/inline-images/canchasintetica100_2_0.jpeg" class="card-img-top" alt="...">
+						 <div class="card-body">
+						   <h5 class="card-title">Cancha 1</h5>
+						   <p class="card-text">Ubicación: Avenida Siempre Viva 123</p>
+						   <p class="card-text">Horario: 8:00 a.m. - 10:00 p.m.</p>
+						   <p class="card-text">Reservas: +54 11 2222-3333</p>
+						 </div>
+						 <div class="card-footer">
+							<a th:href="@{/reserva/}"
+								button  type="button" class="btn btn-primary">Reservar</button> </a>
+						  </div>
+					   </div>
 					</div>
-				</div>
-				<div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 css-15j76c0">
-					<div class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-1h77wgb">
-						<div
-							class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 css-6fiaes">
-							<div
-								class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation9 MuiCard-root css-osz7w2">
-								<a class="MuiTypography-root MuiTypography-body1 css-upxsvy" href="/"><img alt="img"
-										loading="lazy" width="1280" height="1280" decoding="async" data-nimg="1"
-										style="color:transparent;width:100%;height:250px"
-										srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs4.b8337fa1.jpg&amp;w=1920&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs4.b8337fa1.jpg&amp;w=3840&amp;q=75 2x"
-										src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs4.b8337fa1.jpg&amp;w=3840&amp;q=75"></a><button
-									class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-r93u1k"
-									tabindex="0" type="button" aria-label="Add To Cart"><svg
-										xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="tabler-icon tabler-icon-basket">
-										<path d="M10 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-										<path
-											d="M5.001 8h13.999a2 2 0 0 1 1.977 2.304l-1.255 7.152a3 3 0 0 1 -2.966 2.544h-9.512a3 3 0 0 1 -2.965 -2.544l-1.255 -7.152a2 2 0 0 1 1.977 -2.304z">
-										</path>
-										<path d="M17 10l-2 -6"></path>
-										<path d="M7 10l2 -6"></path>
-									</svg><span class="MuiTouchRipple-root css-w0pj6f"></span></button>
-								<div class="MuiCardContent-root css-1bt1eij">
-									<h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">Boat Headphone</h6>
-									<div class="MuiStack-root css-k8v621">
-										<div class="MuiStack-root css-u4p24i">
-											<h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!-- -->285</h6>
-											<p class="MuiTypography-root MuiTypography-body1 css-1qbpimr">$<!-- -->375
-											</p>
-										</div><span
-											class="MuiRating-root MuiRating-sizeSmall Mui-readOnly MuiRating-readOnly css-1a2asoj"
-											role="img" aria-label="4 Stars"><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarBorderIcon">
-														<path
-															d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
-														</path>
-													</svg></span></span></span>
-									</div>
+					<div class="col">
+					   <div class="card">
+						 <img src="https://www.metegol.app/static/9eb9734e260c7cb59f0bda0dde4b3152/6ff2f/SoccerFields%252FrY3m3fh2gZ9zI3ZVv4Hi%252F558b038a-7561-4f1a-8450-66038ca77fc0.jpg" class="card-img-top" alt="...">
+						 <div class="card-body">
+						   <h5 class="card-title">Cancha 2</h5>
+						   <p class="card-text">Ubicación: Calle Las Rosas 456</p>
+						   <p class="card-text">Horario: 9:00 a.m. - 11:00 p.m.</p>
+						   <p class="card-text">Reservas: +54 11 2222-3333</p>
+						 </div>
+						 <div class="card-footer">
+							<a th:href="@{/reserva/}"
+								button  type="button" class="btn btn-primary">Reservar</button> </a>
+						  </div>
+					   </div>
+					</div>
+					<div class="col">
+					   <div class="card">
+						 <img src="https://bogota.gov.co/sites/default/files/u1011/canchas3.jpg" class="card-img-top" alt="...">
+						 <div class="card-body">
+						   <h5 class="card-title">Cancha 3</h5>
+						   <p class="card-text">Ubicación: Avenida Siempre Viva 789</p>
+						   <p class="card-text">Horario: 10:00 a.m. - 12:00 p.m.</p>
+						   <p class="card-text">Reservas: +54 11 2222-3333</p>
+						 </div>
+						 <div class="card-footer">
+							<a th:href="@{/reserva/}"
+								button  type="button" class="btn btn-primary">Reservar</button> </a>
+						  </div>
+					   </div>
+					</div>
+					<div class="col">
+					   <div class="card">
+						 <img src="https://imer.gov.co/wp-content/uploads/2020/07/02-Cancha-de-futbol-Cabeceras.jpg" class="card-img-top" alt="...">
+						 <div class="card-body">
+						   <h5 class="card-title">Cancha 4</h5>
+						   <p class="card-text">Ubicación: Calle Las Rosas 101</p>
+						   <p class="card-text">Horario: 11:00 a.m. - 1:00 p.m.</p>
+						   <p class="card-text">Reservas: +54 11 2222-3333</p>
+						 </div>
+						 <div class="card-footer">
+							<a th:href="@{/reserva/}"
+								button  type="button" class="btn btn-primary">Reservar</button> </a>
+						  </div>
+					   </div>
+					</div>
+				   </div>
+				   <div class="col-lg-8 d-flex align-items-strech">
+					<div class="card w-100">
+						<div class="card-body">
+							<div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
+								<div class="mb-3 mb-sm-0">
+									<h5 class="card-title fw-semibold">Sales Overview</h5>
+								</div>
+								<div>
+									<select class="form-select">
+										<option value="1">March 2023</option>
+										<option value="2">April 2023</option>
+										<option value="3">May 2023</option>
+										<option value="4">June 2023</option>
+									</select>
 								</div>
 							</div>
-						</div>
-						<div
-							class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 css-6fiaes">
-							<div
-								class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation9 MuiCard-root css-osz7w2">
-								<a class="MuiTypography-root MuiTypography-body1 css-upxsvy" href="/"><img alt="img"
-										loading="lazy" width="1280" height="1280" decoding="async" data-nimg="1"
-										style="color:transparent;width:100%;height:250px"
-										srcset="https://www.las2orillas.co/wp-content/uploads/2019/06/cancha.png"
-										src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs5.0fbca68f.jpg&amp;w=3840&amp;q=75"></a><button
-									class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-r93u1k"
-									tabindex="0" type="button" aria-label="Add To Cart"><svg
-										xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="tabler-icon tabler-icon-basket">
-										<path d="M10 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-										<path
-											d="M5.001 8h13.999a2 2 0 0 1 1.977 2.304l-1.255 7.152a3 3 0 0 1 -2.966 2.544h-9.512a3 3 0 0 1 -2.965 -2.544l-1.255 -7.152a2 2 0 0 1 1.977 -2.304z">
-										</path>
-										<path d="M17 10l-2 -6"></path>
-										<path d="M7 10l2 -6"></path>
-									</svg><span class="MuiTouchRipple-root css-w0pj6f"></span></button>
-								<div class="MuiCardContent-root css-1bt1eij">
-									<h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">MacBook Air Pro</h6>
-									<div class="MuiStack-root css-k8v621">
-										<div class="MuiStack-root css-u4p24i">
-											<h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!-- -->900</h6>
-											<p class="MuiTypography-root MuiTypography-body1 css-1qbpimr">$<!-- -->650
-											</p>
-										</div><span
-											class="MuiRating-root MuiRating-sizeSmall Mui-readOnly MuiRating-readOnly css-1a2asoj"
-											role="img" aria-label="5 Stars"><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div
-							class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-3 css-6fiaes">
-							<div
-								class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation9 MuiCard-root css-osz7w2">
-								<a class="MuiTypography-root MuiTypography-body1 css-upxsvy" href="/"><img alt="img"
-										loading="lazy" width="1280" height="1280" decoding="async" data-nimg="1"
-										style="color:transparent;width:100%;height:250px"
-										srcset="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs7.a36f2283.jpg&amp;w=1920&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs7.a36f2283.jpg&amp;w=3840&amp;q=75 2x"
-										src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fs7.a36f2283.jpg&amp;w=3840&amp;q=75"></a><button
-									class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-r93u1k"
-									tabindex="0" type="button" aria-label="Add To Cart"><svg
-										xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-										fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-										stroke-linejoin="round" class="tabler-icon tabler-icon-basket">
-										<path d="M10 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-										<path
-											d="M5.001 8h13.999a2 2 0 0 1 1.977 2.304l-1.255 7.152a3 3 0 0 1 -2.966 2.544h-9.512a3 3 0 0 1 -2.965 -2.544l-1.255 -7.152a2 2 0 0 1 1.977 -2.304z">
-										</path>
-										<path d="M17 10l-2 -6"></path>
-										<path d="M7 10l2 -6"></path>
-									</svg><span class="MuiTouchRipple-root css-w0pj6f"></span></button>
-								<div class="MuiCardContent-root css-1bt1eij">
-									<h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">Red Valvet Dress</h6>
-									<div class="MuiStack-root css-k8v621">
-										<div class="MuiStack-root css-u4p24i">
-											<h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!-- -->200</h6>
-											<p class="MuiTypography-root MuiTypography-body1 css-1qbpimr">$<!-- -->150
-											</p>
-										</div><span
-											class="MuiRating-root MuiRating-sizeSmall Mui-readOnly MuiRating-readOnly css-1a2asoj"
-											role="img" aria-label="3 Stars"><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarIcon">
-														<path
-															d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarBorderIcon">
-														<path
-															d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
-														</path>
-													</svg></span></span><span><span
-													class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
-														class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-														focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-														data-testid="StarBorderIcon">
-														<path
-															d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
-														</path>
-													</svg></span></span></span>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div
-							class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation9 MuiCard-root css-osz7w2">
-							<a class="MuiTypography-root MuiTypography-body1 css-upxsvy" href="/"><img alt="img"
-									loading="lazy" width="1280" height="1280" decoding="async" data-nimg="1"
-									style="color:transparent;width:100%;height:250px"
-									srcset="templates/canchas.html &amp;w=1920 &amp;q=75 1x, templates/canchas.html & amp;w=3840&amp;q=75 2x"
-									src="templates/canchas.html&amp;w=3840&amp;q=75"></a><button
-								class="MuiButtonBase-root MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary MuiFab-root MuiFab-circular MuiFab-sizeSmall MuiFab-primary css-r93u1k"
-								tabindex="0" type="button" aria-label="Add To Cart"><svg
-									xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
-									fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-									stroke-linejoin="round" class="tabler-icon tabler-icon-basket">
-									<path d="M10 14a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
-									<path
-										d="M5.001 8h13.999a2 2 0 0 1 1.977 2.304l-1.255 7.152a3 3 0 0 1 -2.966 2.544h-9.512a3 3 0 0 1 -2.965 -2.544l-1.255 -7.152a2 2 0 0 1 1.977 -2.304z">
-									</path>
-									<path d="M17 10l-2 -6"></path>
-									<path d="M7 10l2 -6"></path>
-								</svg><span class="MuiTouchRipple-root css-w0pj6f"></span></button>
-							<div class="MuiCardContent-root css-1bt1eij">
-								<h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">Cute Soft Teddybear</h6>
-								<div class="MuiStack-root css-k8v621">
-									<div class="MuiStack-root css-u4p24i">
-										<h6 class="MuiTypography-root MuiTypography-h6 css-h5nvap">$<!-- -->345</h6>
-										<p class="MuiTypography-root MuiTypography-body1 css-1qbpimr">$<!-- -->285</p>
-									</div><span
-										class="MuiRating-root MuiRating-sizeSmall Mui-readOnly MuiRating-readOnly css-1a2asoj"
-										role="img" aria-label="2 Stars"><span><span
-												class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-													class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-													focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-													data-testid="StarIcon">
-													<path
-														d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-													</path>
-												</svg></span></span><span><span
-												class="MuiRating-icon MuiRating-iconFilled css-13m1if9"><svg
-													class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-													focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-													data-testid="StarIcon">
-													<path
-														d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z">
-													</path>
-												</svg></span></span><span><span
-												class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
-													class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-													focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-													data-testid="StarBorderIcon">
-													<path
-														d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
-													</path>
-												</svg></span></span><span><span
-												class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
-													class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-													focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-													data-testid="StarBorderIcon">
-													<path
-														d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
-													</path>
-												</svg></span></span><span><span
-												class="MuiRating-icon MuiRating-iconEmpty css-1xh6k8t"><svg
-													class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit css-1cw4hi4"
-													focusable="false" aria-hidden="true" viewBox="0 0 24 24"
-													data-testid="StarBorderIcon">
-													<path
-														d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z">
-													</path>
-												</svg></span></span></span>
-								</div>
-							</div>
+							<div id="chart"></div>
 						</div>
 					</div>
 				</div>
 			</div>
+
 			<div class="py-6 px-6 text-center">
 				<p class="mb-0 fs-4">
 					Design and Developed by

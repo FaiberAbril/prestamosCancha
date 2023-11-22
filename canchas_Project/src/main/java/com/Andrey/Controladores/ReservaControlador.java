@@ -10,27 +10,25 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.Andrey.Modelos.Reserva;
+import com.Andrey.Services.CanchaServicios;
 import com.Andrey.Services.ReservaServicios;
 
 @Controller
 @RequestMapping("/reserva")
 public class ReservaControlador {
 
-
-
+		@Autowired
+		private CanchaServicios canchaServicios;
+	
 		@Autowired
 		private ReservaServicios reservaServicios;
 		
 		@GetMapping("/")
 		public String PaginaReserva(Model model) {
+			model.addAttribute("listaCanchas", canchaServicios.ListarCanchas());
 			model.addAttribute("listaReserva", reservaServicios.ListarReservas());
-			return "Reserva";
-		}
-		
-		@GetMapping("/agregarReserva")
-		public String AgregarReserva(Model model) {
 			model.addAttribute("ObjReserva", new Reserva());
-			return "formularioAgregarReserva";
+			return "Reserva";
 		}
 		
 		@PostMapping("/guardarReserva")
@@ -56,6 +54,7 @@ public class ReservaControlador {
 			reservaServicios.ActualizarReserva(reserva);
 			return "redirect:/reserva/";
 		}
+    }
+		
 		
 
-}

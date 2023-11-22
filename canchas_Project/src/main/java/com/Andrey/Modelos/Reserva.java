@@ -1,6 +1,9 @@
 package com.Andrey.Modelos;
 
 
+import java.sql.Time;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.Date;
 
 import org.hibernate.annotations.JdbcTypeCode;
@@ -34,9 +37,11 @@ public class Reserva {
 	private Date fecha;
 	
 	@Column(nullable = false)
-	private Integer horasReservadas;
 	
-	@Column(nullable = false)
+	@DateTimeFormat(pattern = "HH:mm:ss")
+	private LocalTime  horasReservadas;
+	
+	@Column(nullable = true)
 	private Double precioTotal;
 	
 	
@@ -51,7 +56,7 @@ public class Reserva {
 	public Reserva() {
 	}
 
-	public Reserva(Long id, Date fecha, Integer horasReservadas, Double precioTotal, Usuario idUsuario,
+	public Reserva(Long id, Date fecha, LocalTime horasReservadas, Double precioTotal, Usuario idUsuario,
 			Cancha canchaSintetica) {
 		super();
 		this.id = id;
@@ -78,11 +83,11 @@ public class Reserva {
 		this.fecha = fecha;
 	}
 
-	public Integer getHorasReservadas() {
+	public LocalTime getHorasReservadas() {
 		return horasReservadas;
 	}
 
-	public void setHorasReservadas(Integer horasReservadas) {
+	public void setHorasReservadas(LocalTime horasReservadas) {
 		this.horasReservadas = horasReservadas;
 	}
 
@@ -109,6 +114,8 @@ public class Reserva {
 	public void setCanchaSintetica(Cancha canchaSintetica) {
 		this.canchaSintetica = canchaSintetica;
 	}
+
+	
 
 	
 	
