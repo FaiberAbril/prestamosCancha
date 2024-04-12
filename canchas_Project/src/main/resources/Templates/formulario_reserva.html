@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            margin: 0;
+        }
+
+        .logo img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #007bff;
+            margin-top: 20px;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #444;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        table {
+            font-size: 1.2em;
+            border-collapse: collapse;
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="https://1000marcas.net/wp-content/uploads/2020/03/Spanish-La-Liga-logo-2.jpg" alt="Logo de la empresa">
+    </div>
+
+    <h1>Reservación de Canchas</h1>
+
+    <form th:action="@{/reserva/crear}" method="post" th:object="${reserva}">
+        <!-- Aquí coloca tu formulario de reserva -->
+        <label for="fecha">Fecha:</label>
+        <input type="date" th:field="*{fecha}" required/>
+
+        <label for="horasReservadas">Horas Reservadas:</label>
+        <input type="time" th:field="*{horasReservadas}" required/>
+
+        <!-- Agrega más campos según tus necesidades -->
+
+        <button type="submit">Reservar</button>
+    </form>
+
+    <h2>Reservas Realizadas</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo Electrónico</th>
+                <th>Teléfono</th>
+                <th>Cancha</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Jornada</th>
+                <th>Total a Pagar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se listarán las reservas -->
+            <tr th:each="Reserva : ${listaReserva}">
+                <td th:text="${Reserva.nombre}"></td>
+                <td th:text="${Reserva.correo}"></td>
+                <td th:text="${Reserva.telefono}"></td>
+                <td th:text="${Reserva.canchaSintetica}"></td>
+                <td th:text="${Reserva.fecha}"></td>
+                <td th:text="${Reserva.horasReservadas}"></td>
+                <td th:text="${Reserva.jornada}"></td>
+                <td th:text="${Reserva.totalPagar}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -38,12 +38,15 @@ public class Cancha {
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
 	private List<Reserva> reservas;
 	
+	@Column
+	private String imagen;
+	
 	public Cancha() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public Cancha(Long id, String tipoCancha, String estado, double precioPorHora, LocalTime horaInicio,
-			LocalTime horaFin, List<Reserva> reservas) {
+			LocalTime horaFin, List<Reserva> reservas, String imagen) {
 		super();
 		this.id = id;
 		this.tipoCancha = tipoCancha;
@@ -52,6 +55,7 @@ public class Cancha {
 		this.horaInicio = horaInicio;
 		this.horaFin = horaFin;
 		this.reservas = reservas;
+		this.imagen = imagen;
 	}
 
 	public Long getId() {
@@ -110,7 +114,13 @@ public class Cancha {
 		this.reservas = reservas;
 	}
 
-	
+	public String getImagen() {
+		return imagen;
+	}
 
-	
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+
+
 }

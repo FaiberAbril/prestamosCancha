@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+|||||||||||||||||||||||||<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -8,44 +8,71 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #007bff;
-            color: white;
+            background-color:  #b2ebf2; /* Color de fondo más suave */
+            color: #333; /* Color de texto oscuro */
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             height: 100vh;
             margin: 0;
         }
 
-        .container {
-            width: 400px;
-            padding: 20px;
-            border-radius: 5px;
+        .login-box {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid #333; /* Borde del logo */
+            margin-bottom: 20px;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
         .input-group {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
         button {
             padding: 10px 20px;
-            background-color: #2f00ff;
+            background-color: #5d99c6; /* Color de fondo del botón */
             color: white;
             border: none;
             cursor: pointer;
             font-size: 16px;
-            margin-top: 10px;
             border-radius: 3px;
         }
 
         button:hover {
             background-color: #ffffff;
+            color: #5d99c6;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="login-box">
+        <div class="logo">
+            <img th:src="/images/logos/12.png" alt="Logo de la empresa">
+        </div>
         <h1>Iniciar sesión</h1>
         <div class="input-group">
             <div class="input-group-prepend">
@@ -67,7 +94,7 @@
             var password = document.getElementById("password").value;
 
             // Comprobar si el nombre de usuario y la contraseña son correctos
-            if (username === "admin" && password === "admin") {
+            if (username == "admin" && password == "admin") {
                 alert("Iniciaste sesión correctamente");
                 // Aquí puedes redirigir al usuario a la página correspondiente
             } else {

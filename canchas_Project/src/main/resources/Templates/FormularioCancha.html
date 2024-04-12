@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #bce0fd; /* Azul suave */
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            width: 400px;
+            background-color: #fff; /* Color de fondo blanco */
+            padding: 20px; /* Espacio interno */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+        .form-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center; /* Centrar título */
+        }
+        .form-label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-input {
+            width: calc(100% - 10px); /* Ajustar ancho */
+            padding: 5px;
+            margin-bottom: 20px;
+        }
+        .form-image-container {
+            display: flex;
+            align-items: center;
+        }
+        .form-image-label {
+            margin-right: 10px;
+        }
+        .form-submit {
+            width: 100%;
+            padding: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container"> <!-- Nuevo contenedor para el formulario -->
+            <h2 class="form-title">Formulario: Canchas</h2>
+            <form>
+                <label class="form-label" for="product">Cancha:</label>
+                <input class="form-input" type="text" id="product" name="product" value="">
+                
+                <label class="form-label" for="purchase-price">Precio :</label>
+                <input class="form-input" type="number" id="purchase-price" name="purchase-price" value="">
+                
+                <label class="form-label" for="stock">Estado:</label>
+                <select class="form-input" id="stock" name="stock">
+                    <option value="Disponible">Disponible</option>
+                    <option value="No disponible">No disponible</option>
+                </select>
+                
+                <label class="form-label" for="location">Ubicación:</label>
+                <input class="form-input" type="text" id="location" name="location" value="">
+                
+                <label class="form-label" for="phone">Teléfono:</label>
+                <input class="form-input" type="tel" id="phone" name="phone" value="">
+                
+                <label class="form-label" for="schedule">Horario:</label>
+                <select class="form-input" id="schedule" name="schedule">
+                    <option value="8:00 AM">8:00 AM</option>
+                    <option value="9:00 AM">9:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="2:00 PM">2:00 PM</option>
+                    <option value="3:00 PM">3:00 PM</option>
+                    <option value="4:00 PM">4:00 PM</option>
+                    <option value="5:00 PM">5:00 PM</option>
+                    <option value="6:00 PM">6:00 PM</option>
+                    <option value="7:00 PM">7:00 PM</option>
+                    <option value="8:00 PM">8:00 PM</option>
+                    <option value="9:00 PM">9:00 PM</option>
+                    <option value="10:00 PM">10:00 PM</option>
+                    <option value="11:00 PM">11:00 PM</option>
+                </select>
+                
+                <div class="form-image-container">
+                    <label class="form-image-label" for="image">Imagen:</label>
+                    <input class="form-input" type="file" id="image" name="image">
+                </div>
+                
+                <button class="form-submit" type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

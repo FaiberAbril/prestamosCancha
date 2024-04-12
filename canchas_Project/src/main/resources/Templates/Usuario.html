@@ -6,26 +6,45 @@
     <title>Reservación de Canchas</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom right, #e0f7fa, #b2ebf2);
+            margin: 0;
+            padding: 0;
         }
 
         .container {
-            width: 80%;
+            width: 50%;
             margin: auto;
-            background-color: #ffffff;
+            background-color: #fff;
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 50px;
         }
 
         .logo {
             text-align: center;
             margin-bottom: 20px;
+            animation: blink 2s infinite; /* Animación de parpadeo */
         }
 
         .logo img {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #007bff;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         .form-group {
@@ -34,22 +53,31 @@
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 18px;
+            color: #333;
         }
 
-        .form-group input {
+        .form-group input,
+        .form-group select {
             width: 100%;
-            padding: 10px;
+            padding: 12px;
             box-sizing: border-box;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
 
         .form-group button {
             background-color: #007bff;
-            color: #ffffff;
-            padding: 10px 20px;
+            color: #fff;
+            padding: 15px;
             border: none;
             cursor: pointer;
             width: 100%;
+            font-size: 18px;
+            border-radius: 5px;
         }
 
         .form-group button:hover {
@@ -60,36 +88,44 @@
 <body>
     <div class="container">
         <div class="logo">
-            <img src="https://api.izeelogo.com/categoriepage/logo/equipo-de-futbol/como-hacer-escudos-para-soccer-logos.png" alt="Logo de la empresa">
+            <img src="https://1000marcas.net/wp-content/uploads/2020/03/Spanish-La-Liga-logo-2.jpg" alt="Logo de la empresa">
         </div>
-        <form action="">
+        
+        <form method="post" th:object="${reserva}" th:action="@{/reserva/Guardarreserva}">
             <div class="form-group">
-                <label for="name">Nombre</label>
-                <input type="text" id="name" name="name" required>
+                <label for="Nombre">Nombre</label>
+                <input type="text" id="Nombre" name="Nombre" th:field="*{Nombre}" required>
             </div>
             <div class="form-group">
                 <label for="email">Correo Electrónico</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email"  th:field="*{Correo}" required>
             </div>
             <div class="form-group">
                 <label for="date">Fecha</label>
-                <input type="date" id="date" name="date" required>
+                <input type="date" id="date" name="date" th:field="*{fecha}" required>
             </div>
             <div class="form-group">
                 <label for="hour">Hora</label>
-                <input type="time" id="hour" name="hour" required>
-            </div>
-            <div class="form-group">
-                <label for="cancha">Cancha</label>
-                <select id="cancha" name="cancha" required>
-                    <option value="cancha1">Cancha 1</option>
-                    <option value="cancha2">Cancha 2</option>
-                    <option value="cancha3">Cancha 3</option>
+                <input type="time" id="hour" name="hour" th:field="*{horasReservadas}" required>
+                <div class="form-group">
+                    <label for="precioTotal">PrecioTotal</label>
+                    <input type="number" id="precioTotal" name="precioTotal" th:field="*{precioTotal}" required>
+                </div>
+                <div class="form-group">
+                    <label for="Cancha">canchaSintetica</label>
+                    <input type="text" id="Cancha" name="Cancha" th:field="*{canchaSintetica}" required>
+                </div>
+            <!--div class="form-group">
+                <label for="jornada">Jornada</label>
+                <select id="jornada" name="jornada"  th:field="${Jornada}"required>
+                    <option th:value="true">Mañana - $50,000</option>
+                    <option th:value="false">Noche - $60,000</option>
                 </select>
-            </div>
+            </div-->
             <div class="form-group">
-                <button type="submit">Reservar</button>
+                    <button type="submit" class="btn btn-primary">Reservar</button> <!-- Botón centrado y más grande -->
             </div>
+            
         </form>
     </div>
 </body>

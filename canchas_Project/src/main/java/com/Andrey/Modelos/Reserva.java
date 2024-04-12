@@ -24,46 +24,59 @@ import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
 @Entity
-@Table(name="reserva")
+@Table(name = "reserva")
 public class Reserva {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(name="fecha")
-	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date fecha;
-	
-	@Column(nullable = false)
-	
-	@DateTimeFormat(pattern = "HH:mm:ss")
-	private LocalTime  horasReservadas;
-	
-	@Column(nullable = true)
-	private Double precioTotal;
-	
-	
-   @JoinColumn
-	@ManyToOne(fetch = FetchType.EAGER)
-	private Usuario IdUsuario;
-	
-   @JoinColumn
-	@ManyToOne(fetch = FetchType.EAGER)
-	private Cancha canchaSintetica;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    
+    @Column
+    private String Nombre;
+    
+    @Column
+    private String Correo;
+
+    @Column(name = "fecha")
+    @Temporal(TemporalType.DATE)
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date fecha;
+    
+
+    @Column(nullable = false)
+    @DateTimeFormat(pattern = "HH:mm:ss")
+    private LocalTime horasReservadas;
+    
+    @Column
+    private boolean Jornada;
+
+    @Column(nullable = false)
+    private Double precioTotal;
+
+    @JoinColumn
+    @ManyToOne(fetch = FetchType.EAGER)
+    private Usuario usuario;
+
+    @Column(nullable = true)
+    private String canchaSintetica;
+
+    // Constructor, getters, setters, etc.
+
 
 	public Reserva() {
 	}
 
-	public Reserva(Long id, Date fecha, LocalTime horasReservadas, Double precioTotal, Usuario idUsuario,
-			Cancha canchaSintetica) {
+	public Reserva(Long id, String nombre, String correo, Date fecha, LocalTime horasReservadas, boolean jornada,
+			Double precioTotal, Usuario usuario, String canchaSintetica) {
 		super();
 		this.id = id;
+		Nombre = nombre;
+		Correo = correo;
 		this.fecha = fecha;
 		this.horasReservadas = horasReservadas;
+		Jornada = jornada;
 		this.precioTotal = precioTotal;
-		IdUsuario = idUsuario;
+		this.usuario = usuario;
 		this.canchaSintetica = canchaSintetica;
 	}
 
@@ -73,6 +86,22 @@ public class Reserva {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getNombre() {
+		return Nombre;
+	}
+
+	public void setNombre(String nombre) {
+		Nombre = nombre;
+	}
+
+	public String getCorreo() {
+		return Correo;
+	}
+
+	public void setCorreo(String correo) {
+		Correo = correo;
 	}
 
 	public Date getFecha() {
@@ -91,6 +120,14 @@ public class Reserva {
 		this.horasReservadas = horasReservadas;
 	}
 
+	public boolean isJornada() {
+		return Jornada;
+	}
+
+	public void setJornada(boolean jornada) {
+		Jornada = jornada;
+	}
+
 	public Double getPrecioTotal() {
 		return precioTotal;
 	}
@@ -99,27 +136,20 @@ public class Reserva {
 		this.precioTotal = precioTotal;
 	}
 
-	public Usuario getIdUsuario() {
-		return IdUsuario;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setIdUsuario(Usuario idUsuario) {
-		IdUsuario = idUsuario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public Cancha getCanchaSintetica() {
+	public String getCanchaSintetica() {
 		return canchaSintetica;
 	}
 
-	public void setCanchaSintetica(Cancha canchaSintetica) {
+	public void setCanchaSintetica(String canchaSintetica) {
 		this.canchaSintetica = canchaSintetica;
 	}
-
-	
-
-	
-	
-	
-	
 
 }

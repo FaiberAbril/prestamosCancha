@@ -28,7 +28,7 @@ public class UsuarioControlador {
 	@GetMapping("/agregarUsuario")
 	public String AgregarUsuario(Model model) {
 		model.addAttribute("ObjUsuario", new Usuario());
-		return "formularioAgregarUsuario";
+		return "form_usuario_perfil";
 	}
 	
 	@PostMapping("/guardarUsuario")
